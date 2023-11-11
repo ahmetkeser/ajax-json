@@ -1,3 +1,8 @@
+//xmlhttprequest status codları
+// 200 Başarılı bağlantı
+// 403 : forbitten
+// 404 : Not Fount
+// 505 :Internal server Error
 document.getElementById("ajax").addEventListener("click",getAllEmployees) // ajax butonuna click eventi ekliyoruz bu bizim fonksiyonumuzu tetikleyecek
 function getAllEmployees(){
     const xhr = new XMLHttpRequest()
