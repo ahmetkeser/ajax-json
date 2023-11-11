@@ -17,6 +17,7 @@ function getAllEmployees(){
     const xhr = new XMLHttpRequest()
     xhr.onreadystatechange = function(){ // redisdate durumunda yaptığı kodları getirir sayfanın en başında redisdate kodlarına bak
         console.log(this.readyState) // olumlu bir bağlantı ve alışverişte ekrana sıralı 1 2 3 4 kodlarını getirir
+        console.log(this.status) // buda status kodlarını bize döner
     }
     xhr.open("GET","employees.json",true) // getirme işlemi nereden employees , true burda asengron olmasını istediğimizi belirtir
     xhr.onload = function(){
