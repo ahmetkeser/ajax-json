@@ -6,6 +6,7 @@
 
 //--------------------------
 //Holds the status of the XMLHttpRequest.
+// redisdate codları
 //0: request not initialized
 //1: server connection established
 //2: request received
@@ -14,6 +15,9 @@
 document.getElementById("ajax").addEventListener("click",getAllEmployees) // ajax butonuna click eventi ekliyoruz bu bizim fonksiyonumuzu tetikleyecek
 function getAllEmployees(){
     const xhr = new XMLHttpRequest()
+    xhr.onreadystatechange = function(){ // redisdate durumunda yaptığı kodları getirir sayfanın en başında redisdate kodlarına bak
+        console.log(this.readyState) // olumlu bir bağlantı ve alışverişte ekrana sıralı 1 2 3 4 kodlarını getirir
+    }
     xhr.open("GET","employees.json",true) // getirme işlemi nereden employees , true burda asengron olmasını istediğimizi belirtir
     xhr.onload = function(){
         let list = document.getElementById("employees")// html de yazılacak alanı çağırıyoruz
