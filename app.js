@@ -15,12 +15,12 @@
 document.getElementById("ajax").addEventListener("click",getAllEmployees) // ajax butonuna click eventi ekliyoruz bu bizim fonksiyonumuzu tetikleyecek
 function getAllEmployees(){
     const xhr = new XMLHttpRequest()
-    xhr.onreadystatechange = function(){ // redisdate durumunda yaptığı kodları getirir sayfanın en başında redisdate kodlarına bak
+    xhr.onreadystatechange = function(){ // redisdate durumunda yaptığı kodları getirir sayfanın en başında redisdate kodlarına bak   BU ESKİ BİR YÖNTEM  aşşağıda onload yöntemi var.
         console.log(this.readyState) // olumlu bir bağlantı ve alışverişte ekrana sıralı 1 2 3 4 kodlarını getirir
         console.log(this.status) // buda status kodlarını bize döner
     }
     xhr.open("GET","employees.json",true) // getirme işlemi nereden employees , true burda asengron olmasını istediğimizi belirtir
-    xhr.onload = function(){
+    xhr.onload = function(){ // response hazır olduğunda çalışacak
         let list = document.getElementById("employees")// html de yazılacak alanı çağırıyoruz
 
         if(this.status == 200){//işlemde herhangibir sıkıntı olmadığında status değeri 200 olur bunu kontrol ediyoruz.
